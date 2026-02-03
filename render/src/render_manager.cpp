@@ -40,8 +40,23 @@ void gyoza::Render_manager::Render()
 
     auto& render_componets = resources.render_components;
 
+    glm::mat4 view{1.0f};
+    view = glm::translate(view, glm::vec3(0.0, 0.0, -3.0f));
+
+    glm::mat4 model{1.0};
+    model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f),
+                        glm::vec3(0.5f, 1.0f, 0.0f));
+
+    glm::mat4 projection{};
+    projection = glm::perspective(glm::radians(45.0f), static_cast<float>(WINDOW_WIDTH)/WINDOW_HEIGHT, 0.1f, 100.0f);
+
     for(auto& render_component: render_componets)
     {
+        light_shader->Use();
+        light_shader->Set_matrix4("model", model);
+        light_shader->Set_matrix4("view", view);
+        light_shader->Set_matrix4("projection", projection);
+
         render_component->Draw(*light_shader);
     }
 

@@ -9,5 +9,5 @@ uniform sampler2D texture_2;
 
 void main()
 {
-    FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+    FragColor = vec4( vec3( vec3(tex_cords.xyx) + vec3(0.3, 0.4, 0.2) ) , 1.0f);
 }
