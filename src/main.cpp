@@ -11,7 +11,7 @@ int main()
     resource.render_components.push_back( std::make_unique<gyoza::Cube_render_component>(2) );
 
 
-    while(true)
+    while(rendere.Is_open())
     {
         rendere.Render();
     }

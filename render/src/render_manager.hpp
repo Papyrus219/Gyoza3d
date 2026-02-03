@@ -16,6 +16,8 @@ class Render_manager
 public:
     Render_manager(Resource_manager& resources_, int window_height, int window_width);
 
+    bool Is_open() {return !glfwWindowShouldClose(window);};
+
     void Render();
 private:
 

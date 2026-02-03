@@ -10,6 +10,7 @@ gyoza::Render_component::Render_component(unsigned int data_id_): data_id{data_i
 
 void gyoza::Render_component::Draw(Shader& shader)
 {
+    shader.Use();
     unsigned int diffuse_nr = 1;
     unsigned int specular_nr = 1;
     for(unsigned int i{}; i < textures.size(); i++)

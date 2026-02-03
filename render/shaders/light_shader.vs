@@ -11,7 +11,7 @@ uniform mat4 projection;
 
 void main()
 {
-    gl_Position = projection * view * model * vec4(a_pos, 1.0f);
+    gl_Position = vec4(a_pos, 1.0f);
 
     tex_cords = a_tex_cords;
 }

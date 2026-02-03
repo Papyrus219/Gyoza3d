@@ -36,7 +36,7 @@ gyoza::Render_manager::Render_manager(Resource_manager& resources_, int window_h
 
 void gyoza::Render_manager::Render()
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     auto& render_componets = resources.render_components;
 
