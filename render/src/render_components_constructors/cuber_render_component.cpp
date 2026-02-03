@@ -2,7 +2,7 @@
 
 using namespace gyoza;
 
-gyoza::Cuber_render_component::Cuber_render_component()
+gyoza::Cuber_render_component::Cuber_render_component(unsigned int data_id_): Render_component(data_id_)
 {
     this->vertices = std::vector<Vertex>{
         {-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f},

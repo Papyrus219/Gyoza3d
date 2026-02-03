@@ -12,11 +12,11 @@ namespace gyoza
 class Render_component
 {
 public:
-    Render_component();
-
     void Draw(Shader &shader);
 
 protected:
+    Render_component(unsigned int data_id_);
+
     std::vector<Vertex> vertices{};
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
@@ -25,7 +25,11 @@ protected:
     unsigned int vbo{};
     unsigned int ebo{};
 
+    unsigned int data_id{};
+
     void Buffor_data();
+
+    ~Render_component() = default;
 };
 
 }

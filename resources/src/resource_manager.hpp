@@ -2,9 +2,9 @@
 #define GYOZA_RESOURCE_MANAGER_HPP
 
 #include <vector>
-#include "../data/data_component.hpp"
-#include "../physic/physic_component.hpp"
-#include "../render/render_component.hpp"
+#include "../../data/data_component.hpp"
+#include "../../physic/src/physic_component.hpp"
+#include "../../render/src/render_component.hpp"
 
 namespace gyoza
 {

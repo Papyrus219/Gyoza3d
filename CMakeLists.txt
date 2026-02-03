@@ -15,14 +15,25 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 
+set(Render_src render/src/render_component.cpp
+render/src/texture.cpp
+render/src/vertex.cpp
+render/src/lib/camera.cpp
+render/src/lib/fly_camera.cpp
+render/src/lib/fps_camera.cpp
+render/src/lib/shader.cpp
+render/src/lib/stb_image.cpp
+render/src/render_components_constructors/cuber_render_component.cpp)
+
+set(Physic_src physic/src/physic_component.cpp)
+
+set(Resources_src resources/src/resource_manager.cpp)
+
 add_executable(${PROJECT_NAME}
-    src/main.cpp
-    src/lib/shader.cpp
-    src/lib/camera.cpp
-    src/lib/fly_camera.cpp
-    src/lib/fps_camera.cpp
-    src/stb_image.cpp
-)
+    ${Render_src}
+    ${Physic_src}
+    ${Resources_src}
+    src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME}
     glm::glm

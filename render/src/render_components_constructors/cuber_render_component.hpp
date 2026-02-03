@@ -9,7 +9,9 @@ namespace gyoza
 class Cuber_render_component : public Render_component
 {
 public:
-    Cuber_render_component();
+    Cuber_render_component(unsigned int data_id_);
+
+    ~Cuber_render_component() = default;
 };
 
 }
