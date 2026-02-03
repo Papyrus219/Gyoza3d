@@ -15,7 +15,8 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 
-set(Render_src render/src/render_component.cpp
+set(Render_src render/src/render_manager.cpp
+render/src/render_component.cpp
 render/src/texture.cpp
 render/src/vertex.cpp
 render/src/lib/camera.cpp
@@ -35,10 +36,16 @@ add_executable(${PROJECT_NAME}
     ${Resources_src}
     src/main.cpp)
 
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(${PROJECT_NAME} PRIVATE
     glm::glm
     glad
     glfw
     OpenGL::GL
 )
+
+if (MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4)
+else()
+    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
+endif()
 

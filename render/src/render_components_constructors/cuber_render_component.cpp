@@ -2,7 +2,7 @@
 
 using namespace gyoza;
 
-gyoza::Cuber_render_component::Cuber_render_component(unsigned int data_id_): Render_component(data_id_)
+gyoza::Cube_render_component::Cube_render_component(unsigned int data_id_): Render_component(data_id_)
 {
     this->vertices = std::vector<Vertex>{
         {-0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f},
@@ -51,7 +51,7 @@ gyoza::Cuber_render_component::Cuber_render_component(unsigned int data_id_): Re
     this->indices = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35};
 
     this->textures.emplace_back("../../render/textures/cube/cube.png");
-    this->textures.emplace_back("../../rener/textures/cubre/cube_spec.png", "specular");
+    this->textures.emplace_back("../../render/textures/cube/cube_spec.png", "specular");
 
     Buffor_data();
 }

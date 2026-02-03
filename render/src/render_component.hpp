@@ -14,6 +14,7 @@ class Render_component
 public:
     void Draw(Shader &shader);
 
+    virtual ~Render_component() = default;
 protected:
     Render_component(unsigned int data_id_);
 
@@ -28,8 +29,6 @@ protected:
     unsigned int data_id{};
 
     void Buffor_data();
-
-    ~Render_component() = default;
 };
 
 }

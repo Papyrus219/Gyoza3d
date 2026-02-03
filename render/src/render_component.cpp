@@ -3,9 +3,9 @@
 
 gyoza::Render_component::Render_component(unsigned int data_id_): data_id{data_id_}
 {
-    glGenVertexArrays(1, &this->vao);
-    glGenBuffers(1, &this->vbo);
-    glGenBuffers(1, &this->ebo);
+    glGenVertexArrays(1, &vao);
+    glGenBuffers(1, &vbo);
+    glGenBuffers(1, &ebo);
 }
 
 void gyoza::Render_component::Draw(Shader& shader)
