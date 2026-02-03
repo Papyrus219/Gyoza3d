@@ -12,8 +12,10 @@ public:
     Texture() = default;
     Texture(std::filesystem::path path, std::string type = "diffuse");
 
-    void Load_from_file(std::filesystem::path path, std::string type = "diffuse");
+    unsigned int Get_id() {return id;};
+    std::string Get_type() {return type;};
 
+    void Load_from_file(std::filesystem::path path, std::string type = "diffuse");
 private:
     unsigned int id{};
     std::string type{"diffuse"};

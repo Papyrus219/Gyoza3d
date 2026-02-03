@@ -4,6 +4,7 @@
 #include <vector>
 #include "./vertex.hpp"
 #include "./texture.hpp"
+#include "./lib/shader.hpp"
 
 namespace gyoza
 {
@@ -13,7 +14,9 @@ class Render_component
 public:
     Render_component();
 
-private:
+    void Draw(Shader &shader);
+
+protected:
     std::vector<Vertex> vertices{};
     std::vector<unsigned int> indices;
     std::vector<Texture> textures;
