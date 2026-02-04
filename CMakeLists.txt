@@ -24,7 +24,8 @@ render/src/lib/fly_camera.cpp
 render/src/lib/fps_camera.cpp
 render/src/lib/shader.cpp
 render/src/lib/stb_image.cpp
-render/src/render_components_constructors/cuber_render_component.cpp)
+render/src/render_components_constructors/cuber_render_component.cpp
+render/src/render_components_constructors/sphere_render_component.cpp)
 
 set(Physic_src physic/src/physic_component.cpp)
 

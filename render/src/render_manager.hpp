@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <optional>
+#include "./lib/fly_camera.hpp"
 #include "../../resources/src/resource_manager.hpp"
 
 namespace gyoza {
@@ -20,15 +21,17 @@ public:
 
     void Render();
 private:
+    void Process_input();
 
     static void Frame_buffer_size_callback(GLFWwindow* window, int width, int height);
 
     GLFWwindow* window{};
 
+    Fly_camera camera{};
     Resource_manager& resources;
 
-    const int WINDOW_HEIGHT{};
     const int WINDOW_WIDTH{};
+    const int WINDOW_HEIGHT{};
 
     std::optional<Shader> light_shader{};
 };

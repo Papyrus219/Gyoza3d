@@ -6,6 +6,7 @@
 #include "../../data/data_component.hpp"
 #include "../../physic/src/physic_component.hpp"
 #include "../../render/src/render_components_constructors/cuber_render_component.hpp"
+#include "../../render/src/render_components_constructors/sphere_render_component.hpp"
 #include "../../render/src/render_component.hpp"
 
 namespace gyoza
