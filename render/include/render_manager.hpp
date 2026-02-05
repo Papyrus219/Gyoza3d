@@ -4,8 +4,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <optional>
-#include "./lib/fly_camera.hpp"
-#include "../../resources/src/resource_manager.hpp"
+#include "../src/lib/fly_camera.hpp"
+#include "../src/lib/shader.hpp"
 
 namespace gyoza {
 
@@ -15,8 +15,6 @@ namespace gyoza {
 class Render_manager
 {
 public:
-    Render_manager(Resource_manager& resources_, int window_height, int window_width);
-
     bool Is_open() {return !glfwWindowShouldClose(window);};
 
     void Render();
