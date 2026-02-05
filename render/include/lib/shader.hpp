@@ -9,6 +9,10 @@
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "../material.hpp"
+
+namespace gyoza
+{
 
 class Shader
 {
@@ -36,7 +40,11 @@ public:
 
     void Set_matrix4(const std::string &name, const glm::mat4 matrix);
 
+    void Set_Material(const Material_texture &material);
+
     unsigned int id{};
 };
+
+}
 
 #endif // SHADER_HPP

@@ -25,6 +25,7 @@ render/src/lib/fly_camera.cpp
 render/src/lib/fps_camera.cpp
 render/src/lib/shader.cpp
 render/src/lib/stb_image.cpp
+resources/src/magic_container.cpp
 )
 
 set(Physic_src physic/src/physic_component.cpp)

@@ -1,4 +1,6 @@
-#include "shader.hpp"
+#include "../../include/lib/shader.hpp"
+
+using namespace gyoza;
 
 Shader::Shader(const char* vertex_path, const char* fragment_path)
 {
@@ -140,3 +142,16 @@ void Shader::Set_matrix4(const std::string& name, const glm::mat4 matrix)
     glUniformMatrix4fv( glGetUniformLocation(id, name.c_str()), 1, GL_FALSE, &matrix[0][0] );
 }
 
+void Shader::Set_Material(const Material_texture& material)
+{
+    Set_int("material.diffuse", 0);
+    Set_int("material.specular", 1);
+
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, material.diffuse_texture.Get_id());
+
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, material.speculat_texture.Get_id());
+
+    Set_float("material.shiness", material.shiness);
+}

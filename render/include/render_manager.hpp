@@ -4,8 +4,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <optional>
-#include "../src/lib/fly_camera.hpp"
-#include "../src/lib/shader.hpp"
+#include "./lib/fly_camera.hpp"
+#include "./lib/shader.hpp"
 
 namespace gyoza {
 

@@ -1,4 +1,4 @@
-#include "fps_camera.hpp"
+#include "../../include/lib/fps_camera.hpp"
 
 FPS_camera::FPS_camera(glm::vec3 possition_, glm::vec3 up_, float yaw_, float pitch_): Camera{possition_, up_, yaw_, pitch_}
 {

@@ -1,9 +1,9 @@
-#include "./texture.hpp"
-#include "./lib/stb_image.h"
+#include "../include/texture.hpp"
+#include "../include/lib/stb_image.h"
 #include <glad/glad.h>
 #include <iostream>
 
-gyoza::Texture::Texture(std::filesystem::path path, std::string type)
+gyoza::Texture::Texture(std::filesystem::path path, Texture_type type)
 {
     glGenTextures(1, &this->id);
     glBindTexture(GL_TEXTURE_2D, this->id);
@@ -46,7 +46,7 @@ gyoza::Texture::Texture(std::filesystem::path path, std::string type)
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void gyoza::Texture::Load_from_file(std::filesystem::path path, std::string type)
+void gyoza::Texture::Load_from_file(std::filesystem::path path, Texture_type type)
 {
     glGenTextures(1, &this->id);
     glBindTexture(GL_TEXTURE_2D, this->id);
@@ -87,4 +87,17 @@ void gyoza::Texture::Load_from_file(std::filesystem::path path, std::string type
     stbi_image_free(data);
 
     glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+std::string gyoza::Texture_type_to_string(Texture_type type)
+{
+    switch(type)
+    {
+        case Texture_type::DIFFUSE:
+            return "diffuse";
+            break;
+        case Texture_type::SPECULAR:
+            return "specular";
+            break;
+    }
 }
