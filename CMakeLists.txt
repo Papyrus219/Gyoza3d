@@ -16,16 +16,16 @@ find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 
 set(Render_src render/src/render_manager.cpp
-render/src/render_component.cpp
 render/src/texture.cpp
 render/src/vertex.cpp
+render/src/mesh.cpp
+render/src/window.cpp
 render/src/lib/camera.cpp
 render/src/lib/fly_camera.cpp
 render/src/lib/fps_camera.cpp
 render/src/lib/shader.cpp
 render/src/lib/stb_image.cpp
-render/src/render_components_constructors/cuber_render_component.cpp
-render/src/render_components_constructors/sphere_render_component.cpp)
+)
 
 set(Physic_src physic/src/physic_component.cpp)
 
