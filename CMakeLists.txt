@@ -1,32 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
 project(gyoza)
 
-set(CMAKE_C_STANDARD 11)
+include(FetchContent)
 
-add_library(glad STATIC
-    glad/src/glad.c
-)
+FetchContent_Declare(UnderCore
+GIT_REPOSITORY git@github.com:Papyrus219/UnderCore.git
+GIT_TAG main
+GIT_SHALLOW ON)
 
-target_include_directories(glad PUBLIC
-    ${CMAKE_SOURCE_DIR}/glad/include
-)
-
-find_package(OpenGL REQUIRED)
-find_package(glfw3 REQUIRED)
-find_package(glm REQUIRED)
-
-set(Render_src render/src/render_manager.cpp
-render/src/texture.cpp
-render/src/vertex.cpp
-render/src/mesh.cpp
-render/src/window.cpp
-render/src/lib/camera.cpp
-render/src/lib/fly_camera.cpp
-render/src/lib/fps_camera.cpp
-render/src/lib/shader.cpp
-render/src/lib/stb_image.cpp
-resources/src/magic_container.cpp
-)
+set(Render_src render/src/render_manager.cpp)
 
 set(Physic_src physic/src/physic_component.cpp)
 
@@ -38,11 +20,10 @@ add_executable(${PROJECT_NAME}
     ${Resources_src}
     src/main.cpp)
 
+FetchContent_MakeAvailable(UnderCore)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    glm::glm
-    glad
-    glfw
-    OpenGL::GL
+    UnderCore
 )
 
 if (MSVC)

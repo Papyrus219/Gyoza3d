@@ -1,3 +1,3 @@
-#include "resource_manager.hpp"
+#include "../include/resource_manager.hpp"
 
 using namespace gyoza;
